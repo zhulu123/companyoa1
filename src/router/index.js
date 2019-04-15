@@ -17,6 +17,7 @@ export default new Router({
       path: '/indexNotice',
       name: 'indexNotice',
       component:resolve => require(['@/components/notice/indexNotice'],resolve),
+      redirect:'/indexNotice/inbox',
       children:[
         {
           path: 'top',

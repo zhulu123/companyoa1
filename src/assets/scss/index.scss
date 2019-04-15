@@ -79,6 +79,9 @@ img{border:0px;}
 
     .inboxM{
         @include padall(20px);
+        .topTool{
+            background: #FFF;
+        }
     }
 
 
