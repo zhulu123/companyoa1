@@ -1,0 +1,85 @@
+$fontall:14px/1.5 arial,"微软雅黑","Microsoft Yahei","Hiragino Sans GB",sans-seri;
+article, aside, details, summary, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, s, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {border: 0 none;margin: 0;outline: 0 none;padding: 0;}
+* {word-break: break-all;}
+body, html {color:#444; font:$fontall; _background-image:url(about:blank); _background-attachment:fixed;/** 防止 ie6 抖动 **/}
+input { margin: 0;padding: 0;vertical-align:middle;font:$fontall; outline:none;}
+textarea{font:$fontall; outline:none;}
+select{cursor: pointer; vertical-align: middle; font:$fontall; padding:0; margin:0; outline:none;}
+option{ padding:0; margin:0; outline:none;}
+li {list-style-type: none;}
+img {text-align: center; vertical-align: middle;}
+address, cite, dfn, em, var { font-style: normal;}
+a {
+    text-decoration: none; color:#444; cursor:pointer; transition: all 0.4s; -webkit-transition:all 0.4s; -moz-transition: all 0.4s;
+    :hover{ color: #F30; text-decoration: none;}
+}
+img{border:0px;}
+.clear{ clear: both; padding: 0; margin: 0; line-height: 0;}
+
+
+.bgMain{ background-size:100% 100%;}
+.bg{ background: #f5f5f5;}
+
+.posR{position: relative;}
+.posA{ position: absolute;}
+.posCenter{ left: 0; top: 0; right: 0; bottom: 0; margin: auto;}
+.bgMain{ background: #F5F5F5;}
+.boxShdow{ box-shadow: 0 1px 1px #efebeb;}
+
+@mixin padall($bj) {
+    padding:$bj;
+}
+
+.inedxhome {
+    .indexLeft{
+        @extend .posA;
+        left:10px; top:40%; border-radius: 5px; right: auto; background: rgba(255,255,255,.3); max-height: 300px; width:50px; text-align: center; border: 1px solid #83dfff;
+        a{ 
+            display: block; width: 30px; height: 30px; line-height: 30px; text-align: center; margin: 10px auto; border-radius: 5px; text-decoration: none;
+            &:hover{ background:rgba(11, 108, 156, 0.4);}
+            span{ color: #FFF;  font-size: 24px;}
+        } 
+        
+    }
+
+    .desktop{
+        @extend .posA, .posCenter;
+        $mainOutSide:70px;
+        left:$mainOutSide; right:$mainOutSide;
+        .functionList{
+            padding: 10px;
+            dl{
+                float: left; text-align: center; margin: 10px;
+                dt{
+                    width: 80px; height: 80px; border-radius: 10px; overflow: hidden;
+                    Img{ width: 100%; height: 100%;}
+                }
+                dd{
+                    color: #FFF; height:35px; line-height: 35px;
+                }
+            }
+            .setFunList{ float: left; width: 80px; height: 80px; text-align: center; line-height: 80px; border: 1px dashed #FFF; color: #FFF; margin: 10px; box-sizing: border-box; border-radius: 10px;}
+            .setFunList span{ font-size: 27px;}
+        }
+    }
+}
+
+.indexNotice{
+    $topHeight:60px;
+    .top{ height: $topHeight; background:#1b7ce2;
+        .logo{float: left; line-height: $topHeight; padding: 0 10px; color: #FFF; font-size:22px; font-weight: bold;}
+        nav{ 
+            overflow: hidden; line-height: $topHeight; text-align: center; text-indent: -20em;
+            a{ color: #FFF; font-size: 16px; padding: 0 20px;
+                &.on{ background: rgba(255,255,255,.3); padding:8px 20px; border-radius:50px; margin: 0 10px;}
+            }
+        }
+    }
+
+    .inboxM{
+        @include padall(20px);
+    }
+
+
+}
