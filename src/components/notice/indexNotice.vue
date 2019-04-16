@@ -1,5 +1,5 @@
 <template>
-    <div class="indexNotice posA posCenter bg">
+    <div class="indexNotice posA posCenter">
         <noticetop></noticetop>
         <div class="content">
             <router-view></router-view>

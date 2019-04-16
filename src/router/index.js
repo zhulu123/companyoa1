@@ -22,20 +22,28 @@ export default new Router({
         {
           path: 'top',
           name: 'top',
-          component:resolve => require(['@/components/notice/top'],resolve),
+          component:resolve => require(['@/components/notice/top'],resolve)
         },{
           path: 'leftMenu',
           name: 'leftMenu',
-          component:resolve => require(['@/components/notice/leftMenu'],resolve),
+          component:resolve => require(['@/components/notice/leftMenu'],resolve)
         },{
           path: 'inbox',
           name: 'inbox',
-          component:resolve => require(['@/components/notice/inbox'],resolve),
+          component:resolve => require(['@/components/notice/inbox'],resolve)
         },{
           path: 'outbox',
           name: 'outbox',
           component:resolve => require(['@/components/notice/outbox'],resolve),
+          children:[
+            {
+              path: 'newNotice',
+              name: 'newNotice',
+              component:resolve => require(['@/components/notice/newNotice'],resolve),
+            }
+          ]
         }
+        
       ]
     }
     
