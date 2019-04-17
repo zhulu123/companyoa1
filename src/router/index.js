@@ -30,7 +30,14 @@ export default new Router({
         },{
           path: 'inbox',
           name: 'inbox',
-          component:resolve => require(['@/components/notice/inbox'],resolve)
+          component:resolve => require(['@/components/notice/inbox'],resolve),
+          children:[
+            {
+              path: 'inboxdetails',
+              name: 'inboxdetails',
+              component:resolve => require(['@/components/notice/details'],resolve)
+            }
+          ]
         },{
           path: 'outbox',
           name: 'outbox',
@@ -39,7 +46,11 @@ export default new Router({
             {
               path: 'newNotice',
               name: 'newNotice',
-              component:resolve => require(['@/components/notice/newNotice'],resolve),
+              component:resolve => require(['@/components/notice/newNotice'],resolve)
+            },{
+              path: 'outboxdetails',
+              name: 'outboxdetails',
+              component:resolve => require(['@/components/notice/details'],resolve)
             }
           ]
         }

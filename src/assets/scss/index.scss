@@ -18,8 +18,8 @@ img{border:0px;}
 .clear{ clear: both; padding: 0; margin: 0; line-height: 0;}
 
 ::-webkit-scrollbar {
-    width: 5px;/*竖向滚动条的宽度*/
-    height: 5px;/*横向滚动条的高度*/
+    width: 6px;/*竖向滚动条的宽度*/
+    height: 6px;/*横向滚动条的高度*/
 }
 /*滚动条轨道的样式*/
 ::-webkit-scrollbar-track {
@@ -109,7 +109,7 @@ img{border:0px;}
         .newNoticeM{padding: 20px;
             .peoList{
                 border: 1px solid #dedede; border-radius: 3px; padding: 10px;
-                .choPeo{ display: inline-block; width: 60px; height: 60px; line-height: 60px; border: 1px dashed #dedede; text-align: center;
+                .choPeo{ display: inline-block; width: 50px; height: 50px; line-height: 50px; border: 1px dashed #dedede; text-align: center;
                     i{ font-size:28px;}
                     &:hover{ 
                         color: #66b1ff;  border: 1px solid #66b1ff;
@@ -155,4 +155,72 @@ img{border:0px;}
     }
     .paging{ text-align: center; padding: 10px 0;}
 
+}
+
+.ndetails{
+    $boxW:80%;
+    @extend .posA,.posCenter;
+    background: #FFF; z-index: 100;
+    .detailsTop{ 
+        text-align: center; padding: 10px;
+        h2{ padding: 20px 0; font-size:24px;}
+        .synopsis{
+            padding: 0 0 20px;
+            span{ display: inline-block; padding: 0 20px; color: #888;}
+        }
+    }
+    .messageBox{
+        width:$boxW; margin:0 auto; position: relative;
+        .messageBoxN{
+            @extend .posA, .posCenter; padding: 10px; box-sizing: border-box;
+            overflow: hidden; overflow-y: auto;
+        }
+        .suspensionBts{ 
+            position: absolute; right: -50px; top: 0;
+            a{ 
+                display: block; width: 40px; height: 40px; text-align: center; line-height: 40px; background: #3e98f7; margin: 0 0 1px;
+                i{ color: #FFF; font-size: 18px;}
+                &:hover{ background: #1b7ce2;}
+            }
+        }
+
+    }
+    .fileBox{  
+        width:$boxW; margin:20px auto 0; position: relative; border-top: 1px solid #dedede;
+        h4{ height:40px; line-height: 40px; font-size: 16px; font-weight: normal;}
+        .fileBoxList{
+            font-size: 0; 
+            dl{ 
+                font-size: 14px; display: inline-block; background: red; border-radius: 3px; height: 70px; width: 200px; margin: 0 5px 0 0;
+                dt{ 
+                    width: 50px; height: 50px; border-radius: 3px; float:left; margin: 10px; text-align: center; line-height: 50px; background: rgba(255,255,255,.2);
+                    i{ font-size: 46px; color: #FFF;}
+                }
+                dd{ 
+                    overflow: hidden; height: 100%; position: relative;
+                    h5{ color: #FFF; font-weight: normal; padding: 10px 0; height: 30px; overflow: hidden;}
+                    .fileSize{ position: absolute; height: 30px; line-height: 30px; left: 0; top: auto; right: 0; bottom: 0; text-align: right; padding: 0 10px; color: #FFF; opacity: .4; font-size: 12px;}
+                }
+                &.word{ background: #1b7ce2;}
+                &.excel{ background: #18a95a;}
+                &.ppt{ background: #e68a13;}
+                
+            }
+        }
+    }
+}
+
+.layerBox{
+    height: 400px; position: relative;
+    .leftBox{ position: absolute; left: 0; top: 0; right: auto; bottom: 0; border:1px solid #dedede; width: 250px;}
+    .rightBox{ position: absolute; left: auto; top: 0; right: 0; bottom: 0; border:1px solid #dedede; width: 250px;}
+    .shuttleBox{
+        @extend .posA,.posCenter;
+        width: 600px;
+        .shuttleBoxN{ position: absolute; left: 0; top: 51px; right: 0; bottom: 0; margin: auto; overflow: hidden; overflow-y: auto;}
+        .topbar{ 
+            text-align: center; padding:0 10px; height: 50px; line-height: 50px; border-bottom: 1px solid #dedede;
+            h3{ text-align: justify; font-weight: normal; font-size: 15px;}
+        }
+    }
 }

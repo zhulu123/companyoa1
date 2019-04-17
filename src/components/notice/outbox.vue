@@ -7,7 +7,7 @@
                         </div>
                         <div class="listMain" :style="{height:scHeight}">
                             <ul>
-                                <li v-for="(n,index) in noticeList" :key="index">
+                                <li v-for="(n,index) in noticeList" :key="index"  @click="intdetails">
                                     <div class="listBox">
                                         <h3 v-if="index==0"><span>通知标题</span></h3>
                                         <h4>{{n.title}}</h4>
@@ -174,6 +174,11 @@ export default {
       addnew:function(){
           this.$router.push({
               name:'newNotice'
+          })
+      },
+      intdetails(){
+          this.$router.push({
+              name:'outboxdetails'
           })
       }
     }

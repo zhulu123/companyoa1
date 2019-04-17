@@ -9,7 +9,7 @@
                         </div>
                         <div class="listMain" :style="{height:scHeight}">
                             <ul>
-                                <li v-for="(n,index) in noticeList" :key="index">
+                                <li v-for="(n,index) in noticeList" :key="index" @click="intdetails">
                                     <div class="listBox">
                                         <h3 v-if="index==0"><span>通知标题</span></h3>
                                         <h4>{{n.title}}</h4>
@@ -196,6 +196,7 @@
                 </el-tab-pane>
             </el-tabs>
         </div>
+        <router-view></router-view>
     </div>
 </template>
 
@@ -301,6 +302,11 @@ export default {
           let thisheight= window.getComputedStyle(me.$refs.mianHeight).height;
           let scHeight = parseInt(thisheight)-150+"px";
           me.scHeight = scHeight;    
+      },
+      intdetails(){
+          this.$router.push({
+              name:'inboxdetails'
+          })
       }
     }
 }
