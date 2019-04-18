@@ -245,6 +245,15 @@ img{border:0px;}
         @extend .inbox;
         .formulateM{
             @extend .inboxM;
+            .formulateCon{
+                h2{ text-align: center; font-size: 28px; padding: 20px 0;}
+                em{ display: block; padding: 10px 0;}
+                .Content{ overflow: hidden;}
+                .bts{ 
+                    text-align: center; padding: 20px 0 0;
+                    button{ width: 200px;}
+                }
+            }
         }
     }
 }
