@@ -56,7 +56,42 @@ export default new Router({
         }
         
       ]
+    },{
+      path: '/indexPlan',
+      name: 'indexPlan',
+      component:resolve => require(['@/components/plan/indexPlan'],resolve),
+      redirect:'/indexPlan/see',
+      children:[
+        {
+          path: 'top',
+          name: 'top',
+          component:resolve => require(['@/components/plan/top'],resolve)
+        },{
+          path: 'see',
+          name: 'see',
+          component:resolve => require(['@/components/plan/see'],resolve),
+          children:[
+            {
+              path:'seedetails',
+              name:'seedetails',
+              component:resolve => require(['@/components/plan/details'],resolve)
+            }
+          ]
+        },{
+          path: 'formulate',
+          name: 'formulate',
+          component:resolve => require(['@/components/plan/formulate'],resolve),
+          children:[
+            {
+              path:'formulatedetails',
+              name:'formulatedetails',
+              component:resolve => require(['@/components/plan/details'],resolve)
+            }
+          ]
+        }
+      ]
     }
+    
     
   ]
 })

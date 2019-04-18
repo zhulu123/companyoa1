@@ -123,7 +123,13 @@ img{border:0px;}
             }
     }
     }
-    .topTool{ border-bottom: 1px solid #eaeaea; padding: 10px 0;}
+    .topTool{ 
+        border-bottom: 1px solid #eaeaea; padding: 10px 0;
+        em{ 
+            display: inline-block; padding: 0 0 0 10px;
+            &:nth-child(1){ padding: 0;}
+        }
+    }
 
     .listMain{
         overflow: hidden; overflow-y: auto;
@@ -153,7 +159,8 @@ img{border:0px;}
             }
         }
     }
-    .paging{ text-align: center; padding: 10px 0;}
+    .paging{ text-align: center; padding: 20px 0 0
+        ;}
 
 }
 
@@ -221,6 +228,23 @@ img{border:0px;}
         .topbar{ 
             text-align: center; padding:0 10px; height: 50px; line-height: 50px; border-bottom: 1px solid #dedede;
             h3{ text-align: justify; font-weight: normal; font-size: 15px;}
+        }
+    }
+}
+
+.indexPlan{
+    @extend .indexNotice;
+    .see{
+        @extend .inbox;
+        .seeM{
+            @extend .inboxM;
+        }
+    }
+
+    .formulate{
+        @extend .inbox;
+        .formulateM{
+            @extend .inboxM;
         }
     }
 }
