@@ -18,8 +18,8 @@ img{border:0px;}
 .clear{ clear: both; padding: 0; margin: 0; line-height: 0;}
 
 ::-webkit-scrollbar {
-    width: 6px;/*竖向滚动条的宽度*/
-    height: 6px;/*横向滚动条的高度*/
+    width: 8px;/*竖向滚动条的宽度*/
+    height: 8px;/*横向滚动条的高度*/
 }
 /*滚动条轨道的样式*/
 ::-webkit-scrollbar-track {
@@ -180,13 +180,16 @@ img{border:0px;}
         width:$boxW; margin:0 auto; position: relative;
         .messageBoxN{
             @extend .posA, .posCenter; padding: 10px; box-sizing: border-box;
-            overflow: hidden; overflow-y: auto;
+            overflow: hidden; overflow-y: auto; background: #f5f5f5; box-shadow: 0 1px 3px #c5c5c5; border-radius: 5px;
         }
         .suspensionBts{ 
             position: absolute; right: -50px; top: 0;
             a{ 
                 display: block; width: 40px; height: 40px; text-align: center; line-height: 40px; background: #3e98f7; margin: 0 0 1px;
-                i{ color: #FFF; font-size: 18px;}
+                i{
+                     color: #FFF; font-size: 18px;
+                     &.iconfont{ font-size:22px;}
+                }
                 &:hover{ background: #1b7ce2;}
             }
         }
@@ -194,7 +197,7 @@ img{border:0px;}
     }
     .fileBox{  
         width:$boxW; margin:20px auto 0; position: relative; border-top: 1px solid #dedede;
-        h4{ height:40px; line-height: 40px; font-size: 16px; font-weight: normal;}
+        h4{ height:40px; line-height: 40px; font-size: 14px; font-weight: normal;}
         .fileBoxList{
             font-size: 0; 
             dl{ 
@@ -214,6 +217,10 @@ img{border:0px;}
                 
             }
         }
+    }
+    .haveRead{
+        width:$boxW; margin:20px auto 0; position: relative;
+        h4{ height:40px; line-height: 40px; font-size: 14px; font-weight: normal;}
     }
 }
 
