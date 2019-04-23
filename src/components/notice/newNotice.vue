@@ -44,13 +44,27 @@
                 <div class="shuttleBox">
                     <div class="leftBox">
                         <div class="topbar"><el-input placeholder="输入关键字进行过滤" size="small" v-model="filterText"></el-input></div>
+                        <!-- 
+                            filter-node-methods筛选框内容 
+                            default-expand-al默认打开全部的节点
+                            node-key每个树节点用来作为唯一标识的属性，整棵树应该是唯一的
+
+                        -->
                         <div class="shuttleBoxN">
-                            <el-tree class="filter-tree" :data="data2" :props="defaultProps" default-expand-all :filter-node-method="filterNode" show-checkbox ref="tree2"></el-tree>
+                            <el-tree class="filter-tree" 
+                            :data="data2" 
+                            :props="defaultProps" 
+                            default-expand-all
+                            node-key="id" 
+                            :filter-node-method="filterNode" 
+                            show-checkbox 
+                            ref="tree">
+                            </el-tree>
                         </div>
                     </div>
                     <div class="bts">
-                        <el-button type="danger" round icon="el-icon-arrow-left"></el-button>
-                        <el-button type="danger" round icon="el-icon-arrow-right"></el-button>
+                        <el-button type="primary" round icon="el-icon-arrow-left" @click="getCheckedNodes"></el-button>
+                        <el-button type="primary" round icon="el-icon-arrow-right" @click="uchoPeo"></el-button>
                     </div>
                     <div class="rightBox">
                         <div class="topbar"><h3>已选内容</h3></div>
@@ -115,30 +129,21 @@ export default {
                 label: '二级 2-1'
             }, {
                 id: 6,
-                label: '二级 2-2'
+                label: '二级 2-2',
+                children:[
+                    {
+                        id:611,
+                        label:'三级2-2-1'
+                    }
+                ]
             }]
             }, {
             id: 3,
             label: '一级 3',
             children: [{
-                id: 7,
-                label: '二级 3-1'
-            }, {
-                id: 8,
-                label: '二级 3-2'
-            }, {
-                id: 9,
-                label: '二级 3-2'
-            }, {
-                id: 10,
-                label: '二级 3-2'
-            }, {
-                id: 11,
-                label: '二级 3-2'
-            }, {
-                id: 12,
-                label: '二级 3-2'
-            }]
+                    id: 7,
+                    label: '二级 3-1'
+                }]
             }],
             defaultProps: {
             children: 'children',
@@ -148,7 +153,7 @@ export default {
     },
     watch: {
         filterText(val) {
-            this.$refs.tree2.filter(val);
+            this.$refs.tree.filter(val);
         }
     },
     methods:{
@@ -168,12 +173,18 @@ export default {
         onSubmit(){
 
         },
-        handleClose(){
+        handleClose(done){
             this.$confirm('确认关闭？')
             .then(_ => {
                 done();
             })
             .catch(_ => {});
+        },
+        getCheckedNodes(){
+            console.log(this.$refs.tree.getCheckedNodes());
+        },
+        uchoPeo(){
+            
         }
     }
 }

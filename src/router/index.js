@@ -28,6 +28,10 @@ export default new Router({
           name: 'leftMenu',
           component:resolve => require(['@/components/notice/leftMenu'],resolve)
         },{
+          path: 'ceshi',
+          name: 'ceshi',
+          component:resolve => require(['@/components/notice/ceshi'],resolve)
+        },{
           path: 'inbox',
           name: 'inbox',
           component:resolve => require(['@/components/notice/inbox'],resolve),
