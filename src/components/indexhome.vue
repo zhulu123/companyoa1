@@ -26,6 +26,7 @@
 
 <script>
 export default {
+    // 发个方法
     name:'inedxhome',
     data() {
         return {
