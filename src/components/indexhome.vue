@@ -33,7 +33,7 @@ export default {
             appList:[
                 {name:'校周计划',imgUrl:require('./../assets/images/APP_44.png'),routerLink:'/indexPlan'},
                 {name:'通知',imgUrl:require('./../assets/images/APP_49.png'),routerLink:'/indexNotice'},
-                {name:'OA系统设置',imgUrl:require('./../assets/images/APP_58.png'),routerLink:'/indexNotice'}
+                {name:'OA系统设置',imgUrl:require('./../assets/images/APP_58.png'),routerLink:'/indexSystem'}
             ]
         }
     },

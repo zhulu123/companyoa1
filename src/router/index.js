@@ -94,8 +94,44 @@ export default new Router({
           ]
         }
       ]
+    },
+    {
+      path: '/indexSystem',
+      name: 'indexSystem',
+      component:resolve => require(['@/components/system/indexSystem'],resolve),
+      redirect:'/indexSystem/authority',
+      children:[
+        {
+          path: 'top',
+          name: 'top',
+          component:resolve => require(['@/components/system/top'],resolve)
+        },{
+          path: 'authority',
+          name: 'authority',
+          component:resolve => require(['@/components/system/authority'],resolve),
+        },{
+          path: 'messageType',
+          name: 'messageType',
+          component:resolve => require(['@/components/system/messageType'],resolve),
+        },{
+          path: 'custom',
+          name: 'custom',
+          component:resolve => require(['@/components/system/custom'],resolve),
+          children:[
+            {
+              path: 'newCustom',
+              name: 'newCustom',
+              component:resolve => require(['@/components/system/newCustom'],resolve)
+            },
+            {
+              path: 'editCustom/:id',
+              name: 'editCustom',
+              component:resolve => require(['@/components/system/editCustom'],resolve)
+            }
+          ]
+        },
+      ]
     }
-    
     
   ]
 })
